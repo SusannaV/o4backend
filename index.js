@@ -1,39 +1,26 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 
-let products = [
-    {
-      "id": 1,
-      "nimi": "Acer Nitro XV2",
-      "hinta": 599.00,
-      "ominaisuudet": ["Huipputarkka", "Teräväpiirto", "Hyvä"],
-      "koko": "19\"",
-      "merkki": "Acer",
-      "lisayspvm": "2024-02-15",
-      "arviot": 3.8,
-      "suosio": 5,
-      "kategoria": "Näytöt"
-    },
-    {
-      "id": 2,
-      "nimi": "Lenovo IdeaPad Slim",
-      "hinta": 699.00,
-      "ominaisuudet": ["Kevyt", "Nopea", "Hyvä"],
-      "koko": "17\"",
-      "merkki": "Lenovo",
-      "lisayspvm": "2024-05-20",
-      "arviot": 4.0,
-      "suosio": 4,
-      "kategoria": "Läppärit"
-    }
-]
+const tietokoneet = require('./tietokoneet.json')
+const oheislaitteet = require('./oheislaitteet.json')
+const tarjoukset = require('./tarjoukset.json')
+
 
 app.get('/', (request, response) => {
   response.send('<h1>Hello Werkkokauppa!</h1>')
 })
 
-app.get('/api/products', (request, response) => {
-  response.json(products)
+
+app.get('/api/tietokoneet', (request, response) => {
+  response.json(tietokoneet)
+})
+app.get('/api/oheislaitteet', (request, response) => {
+  response.json(oheislaitteet)
+})
+app.get('/api/tarjoukset', (request, response) => {
+  response.json(tarjoukset)
 })
 
 const PORT = 3001
