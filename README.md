@@ -1,7 +1,13 @@
-Asenna/päivitä riippuvuudet komennolla npm install
+# Werkkokauppa backend
 
-Käynnistetään komennolla npm start
+Asenna/päivitä riippuvuudet komennolla npm install  
+
+Käynnistetään komennolla npm start  
 
 
-Pyörii osoitteessa http://localhost:3001/
-Tuotetiedot osoitteessa http://localhost:3001/api/products
+Pyörii osoitteessa http://localhost:3001/  
+
+Endpointit:
+http://localhost:3001/api/tietokoneet
+http://localhost:3001/api/oheislaitteet 
+http://localhost:3001/api/tarjoukset 
